@@ -1,0 +1,83 @@
+{
+  "name": "ccv",
+  "displayName": "Ctrl-CV",
+  "description": "根据模板创建项目",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.55.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "publisher": "0x134158B",
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onCommand:CCV.Project.New",
+    "onCommand:CCV.Template.New.File",
+    "onCommand:CCV.Template.New.Folder",
+    "onCommand:CCV.Template.New.Git"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "CCV.Project.New",
+        "title": "%command.title.ccv.project.new%",
+        "category": "%command.category.ccv%"
+      },
+      {
+        "command": "CCV.Template.New.File",
+        "title": "%command.title.ccv.template.new.file%",
+        "category": "%command.category.ccv%"
+      },
+      {
+        "command": "CCV.Template.New.Folder",
+        "title": "%command.title.ccv.template.new.folder%",
+        "category": "%command.category.ccv%"
+      },
+      {
+        "command": "CCV.Template.New.Git",
+        "title": "%command.title.ccv.template.new.git%",
+        "category": "%command.category.ccv%"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "CCV.Project.New",
+          "group": "CCV"
+        },
+        {
+          "command": "CCV.Template.New.File",
+          "when": "!explorerResourceIsFolder",
+          "group": "CCV"
+        },
+        {
+          "command": "CCV.Template.New.Folder",
+          "when": "explorerResourceIsFolder",
+          "group": "CCV"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.55.0",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^12.11.7",
+    "eslint": "^7.19.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "glob": "^7.1.6",
+    "mocha": "^8.2.1",
+    "typescript": "^4.1.3",
+    "vscode-test": "^1.5.0"
+  }
+}

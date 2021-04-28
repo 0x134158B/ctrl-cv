@@ -1,0 +1,7 @@
+{
+  "command.category.ccv": "CCV",
+  "command.title.ccv.project.new": "New Project From Template",
+  "command.title.ccv.template.new.file": "New Template From Current File",
+  "command.title.ccv.template.new.folder": "New Template From Current Folder",
+  "command.title.ccv.template.new.git": "New Template From Git Repository"
+}
