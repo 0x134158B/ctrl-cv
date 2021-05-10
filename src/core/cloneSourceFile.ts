@@ -1,12 +1,11 @@
 import ITemplate from "./template";
 import SourceFile from "./sourceFile";
-
-import { shellExecAsync } from "./shellAsync";
+import ShellAsync from "./shellAsync";
 
 import * as fs from "fs-extra";
 import * as Path from "path";
 
-async function clone(
+export default async function cloneSourceFile(
   template: ITemplate,
   workerPath: string
 ): Promise<SourceFile[]> {
@@ -14,7 +13,7 @@ async function clone(
     return await _git(
       workerPath,
       template.sources.git,
-      template.sources.bot,
+      template.sources.tag,
       template.sources.path
     );
   } else if (template.sources.path) {
@@ -50,8 +49,11 @@ async function _git(
   let commandString = bot
     ? `git clone ${git} ${workerPath} -b ${bot} --single-branch`
     : `git clone ${git} ${workerPath} --single-branch`;
-  let result = await shellExecAsync(commandString);
+  let result = await ShellAsync.exec(commandString);
   if (result) {
+    workerPath = path
+      ? Path.join(workerPath, Path.normalize(path))
+      : workerPath;
     return await _toSourceFileArray(workerPath, "");
   }
   throw new Error("执行git clone 命令失败");
@@ -78,5 +80,3 @@ async function _toSourceFileArray(
   }
   return s;
 }
-
-export default clone;

@@ -1,5 +1,5 @@
 {
   "command.category.ccv": "CCV",
-  "command.title.ccv.project.new": "New Project From Template",
-  "command.title.ccv.template.new": "New Template Use This"
+  "command.title.ccv.project.new": "CCV -New Project From Template",
+  "command.title.ccv.project.new.simple": "CCV -New Project From Git Repo"
 }

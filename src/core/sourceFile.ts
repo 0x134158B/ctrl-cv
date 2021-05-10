@@ -1,6 +1,6 @@
 import * as path from "path";
 
-class SourceFile {
+export default class SourceFile {
   /**
    * 根目录
    */
@@ -22,5 +22,3 @@ class SourceFile {
     return path.resolve(this.root, this.internalPath);
   }
 }
-
-export default SourceFile;

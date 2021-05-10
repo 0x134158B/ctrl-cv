@@ -1,1 +1,5 @@
-{}
+{
+  "command.category.ccv": "CCV",
+  "command.title.ccv.project.new": "CCV -使用模板创建新项目",
+  "command.title.ccv.project.new.simple": "CCV -使用Git仓库创建新项目"
+}

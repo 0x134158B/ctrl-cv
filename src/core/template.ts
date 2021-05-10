@@ -1,19 +1,4 @@
-interface ITemplate {
-  /**
-   * 模板名
-   */
-  name: string;
-
-  /**
-   * 描述
-   */
-  description?: string;
-
-  /**
-   * 标签
-   */
-  tags?: string[];
-
+export default interface ITemplate {
   /**
    * 模板源
    */
@@ -36,6 +21,21 @@ interface ITemplate {
    * 预设脚本
    */
   script?: string;
+
+  /**
+   * 模板名
+   */
+  name?: string;
+
+  /**
+   * 描述
+   */
+  description?: string;
+
+  /**
+   * 标签
+   */
+  tags?: string[];
 }
 
 interface ITemplateSource {
@@ -47,7 +47,7 @@ interface ITemplateSource {
   /**
    * git branch or tag
    */
-  bot?: string;
+  tag?: string;
 
   /**
    * 模板源的绝对路径，如果模板源为git则为git源内部的绝对路径
@@ -59,5 +59,3 @@ interface ITemplateSource {
    */
   isfile?: boolean;
 }
-
-export default ITemplate;

@@ -12,7 +12,8 @@
   "publisher": "0x134158B",
   "main": "./out/extension.js",
   "activationEvents": [
-    "onCommand:CCV.Project.New"
+    "onCommand:CCV.Project.New",
+    "onCommand:CCV.Project.New.Simple"
   ],
   "contributes": {
     "commands": [
@@ -20,12 +21,21 @@
         "command": "CCV.Project.New",
         "title": "%command.title.ccv.project.new%",
         "category": "%command.category.ccv%"
+      },
+      {
+        "command": "CCV.Project.New.Simple",
+        "title": "%command.title.ccv.project.new.simple%",
+        "category": "%command.category.ccv%"
       }
     ],
     "menus": {
       "explorer/context": [
         {
           "command": "CCV.Project.New",
+          "group": "CCV"
+        },
+        {
+          "command": "CCV.Project.New.Simple",
           "group": "CCV"
         }
       ]

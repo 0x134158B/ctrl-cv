@@ -1,6 +1,7 @@
 import * as vscode from "vscode";
 import ICommand from "./commands/command";
-import NewProjectCommand from "./commands/newProjectCommand";
+import CreateProjectCommand from "./commands/createProjectCommand";
+import SimpleGitCloneCommand from "./commands/simpleGitCloneCommand";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log('Congratulations, your extension "helloworld" is now active!');
@@ -16,7 +17,7 @@ export function activate(context: vscode.ExtensionContext) {
           try {
             await new commandNew().handle(context, args);
           } catch (error) {
-            console.log(error);
+            vscode.window.showErrorMessage(error.message);
           }
         }
       )
@@ -24,10 +25,9 @@ export function activate(context: vscode.ExtensionContext) {
   }
 
   //新建项目
-  registerCommand("CCV.Project.New", NewProjectCommand);
+  registerCommand("CCV.Project.New", CreateProjectCommand);
 
+  registerCommand("CCV.Project.New.Simple", SimpleGitCloneCommand);
 }
 
-export function deactivate() {
-  console.log("end");
-}
+export function deactivate() {}
