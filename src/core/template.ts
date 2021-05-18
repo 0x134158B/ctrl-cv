@@ -2,7 +2,7 @@ export default interface ITemplate {
   /**
    * 模板源
    */
-  sources: ITemplateSource;
+  source: ITemplateSource;
 
   /**
    * 根据文件名排除模板源内的文件

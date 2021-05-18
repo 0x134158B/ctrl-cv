@@ -4,13 +4,13 @@
   "description": "根据模板创建项目",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.55.0"
+    "vscode": "^1.56.0"
   },
   "categories": [
     "Other"
   ],
   "publisher": "0x134158B",
-  "main": "./out/extension.js",
+  "main": "./dist/extension.js",
   "activationEvents": [
     "onCommand:CCV.Project.New",
     "onCommand:CCV.Project.New.Simple"
@@ -59,7 +59,7 @@
     "@types/node": "^12.11.7",
     "@types/node-uuid": "0.0.28",
     "@types/shelljs": "^0.8.8",
-    "@types/vscode": "^1.55.0",
+    "@types/vscode": "^1.56.0",
     "@typescript-eslint/eslint-plugin": "^4.14.1",
     "@typescript-eslint/parser": "^4.14.1",
     "eslint": "^7.19.0",

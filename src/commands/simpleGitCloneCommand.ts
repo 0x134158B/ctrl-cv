@@ -28,6 +28,9 @@ export default class SimpleGitCloneCommand implements ICommand {
     );
     await createProject.handle();
   }
+  _set(): string | number {
+    return "a";
+  }
 }
 
 async function _setTemplate(): Promise<ITemplate> {
@@ -42,7 +45,7 @@ async function _setTemplate(): Promise<ITemplate> {
     throw new Error("未输入git项目地址");
   }
   return {
-    sources: {
+    source: {
       git: git,
     },
   };

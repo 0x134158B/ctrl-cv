@@ -49,7 +49,7 @@ export default class CreateProject {
         this._installPath,
         this._projectName,
         this._replace,
-        this._template.sources.isfile
+        this._template.source.isfile
       );
       // 执行预设脚本
       if (this._template.script && this._template.script !== "") {

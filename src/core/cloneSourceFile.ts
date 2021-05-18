@@ -9,15 +9,15 @@ export default async function cloneSourceFile(
   template: ITemplate,
   workerPath: string
 ): Promise<SourceFile[]> {
-  if (template.sources.git && template.sources.git !== "") {
+  if (template.source.git && template.source.git !== "") {
     return await _git(
       workerPath,
-      template.sources.git,
-      template.sources.tag,
-      template.sources.path
+      template.source.git,
+      template.source.tag,
+      template.source.path
     );
-  } else if (template.sources.path) {
-    return await _local(template.sources.path);
+  } else if (template.source.path) {
+    return await _local(template.source.path);
   } else {
     throw new Error("模板文件源设置错误");
   }
